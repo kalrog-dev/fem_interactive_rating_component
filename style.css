@@ -1,3 +1,17 @@
+/* Fonts */
+@font-face {
+  font-family: "Overpass";
+  font-weight: 700;
+  src: url("./fonts/Overpass-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Overpass";
+  font-weight: 400;
+  src: url("./fonts/Overpass-Regular.ttf");
+}
+
+/* Reset */
 *,
 *::before,
 *::after {
@@ -5,3 +19,107 @@
   margin: 0;
   padding: 0;
 }
+
+/* General styles */
+body {
+  font-family: "Overpass";
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.57;
+  color: #969FAD;
+  background-color: #131518;
+}
+
+.review {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.review__container {
+  background-image: radial-gradient(circle at top, #232A34, #181E27);
+  width: 87.2%;
+  padding: 24px 24px 32px 24px;
+  border-radius: 15px;
+}
+
+.review__container > *:not(:first-child) {
+  margin-block-start: 1.25em;
+}
+
+/* Typography & Layout */
+.review__star-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #262E38;
+  border-radius: 50%;
+}
+
+.review__star {
+  width: 14px;
+}
+
+.review__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.review__rating {
+  display: flex;
+  justify-content: space-between;
+}
+
+.review__btn-rating,
+.review__btn-submit {
+  transition-property: color, background-color;
+  transition-duration: 0.2s;
+}
+
+.review__btn-rating {
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  line-height: 1.71;
+  font-weight: 700;
+  color: #7C8798;
+  background-color: #262E38;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.review__btn-rating:hover {
+  color: #fff;
+  background-color: #FC7614;
+}
+
+.review__btn-rating--selected {
+  color: #fff;
+  background-color: #7C8798;
+}
+
+.review__btn-submit {
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1.87px;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.86em 1.75em;
+  color: #fff;
+  background-color: #FC7614;
+  border-radius: 22px;
+}
+
+.review__btn-submit:hover {
+  color: #FC7614;
+  background-color: #fff;
+}
+
+/* Media queries */
