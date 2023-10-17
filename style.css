@@ -122,4 +122,21 @@ body {
   background-color: #fff;
 }
 
+/* Thanks.html */
+.review__container--center {
+  text-align: center;
+}
+
+.review__illustration {
+  margin-top: 10px;
+}
+
+.review__result {
+  display: inline-block;
+  padding: 0.36em 0.86em;
+  color: #FC7614;
+  background-color: #262E38;
+  border-radius: 22px;
+}
+
 /* Media queries */
