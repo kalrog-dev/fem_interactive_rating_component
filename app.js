@@ -1,3 +1,11 @@
+// Clear local storage or insert user's rating
+if (window.location.href.endsWith("index.html")) {
+  localStorage.clear();
+} else {
+  let ratingInsertPosition = document.querySelector(".review__rating-insert-position");
+  ratingInsertPosition.textContent = localStorage.getItem("rating");
+}
+
 const btnsRating = [...document.querySelectorAll(".review__btn-rating")];
 let rating = 0;
 let selected = 0;
@@ -23,11 +31,28 @@ btnsRating.forEach(btn => {
       btnsRating.forEach(btn => btn.classList.remove("review__btn-rating--selected"));
     }
 
-    // Change rating
+    // Visual change rating
     btn.classList.toggle("review__btn-rating--selected");
+
+    // Check if anything is currently selected
+    let somethingSelected = btnsRating.some(btn => btn.classList.contains("review__btn-rating--selected"));
+    if (!somethingSelected) {
+      selected = 0;
+    }
+
+    // Change rating
     rating = selected;
+    localStorage.setItem("rating", String(rating));
   });
 });
 
-
-  
+// When a submit button is clicked without giving a rating
+if (window.location.href.endsWith("index.html")) {
+  const btnSubmit = document.querySelector(".review__btn-submit");
+  btnSubmit.addEventListener("click", (event) => {
+    // Check if the user gave rating
+    if (!selected) {
+      event.preventDefault();
+    }
+  })
+}

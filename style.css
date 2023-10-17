@@ -40,6 +40,7 @@ body {
 .review__container {
   background-image: radial-gradient(circle at top, #232A34, #181E27);
   width: 87.2%;
+  max-width: 412px;
   padding: 24px 24px 32px 24px;
   border-radius: 15px;
 }
@@ -128,6 +129,8 @@ body {
 }
 
 .review__illustration {
+  display: block;
+  margin-inline: auto;
   margin-top: 10px;
 }
 
@@ -140,3 +143,42 @@ body {
 }
 
 /* Media queries */
+@media (min-width: 400px) {
+  body {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .review__container {
+    padding: 32px;
+  }
+
+  .review__star-container {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .review__star {
+    width: 17px;
+  }
+
+  .review__result {
+    margin-top: 2em !important;
+  }
+
+  .review__title {
+    font-size: 1.87rem;
+  }
+
+  .review__btn-rating {
+    width: 51px;
+    height: 51px;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .review__btn-submit {
+    padding-block: 0.75em;
+    letter-spacing: 2px;
+  }
+}
