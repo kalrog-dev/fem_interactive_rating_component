@@ -1,9 +1,9 @@
 // Clear local storage or insert user's rating
-if (window.location.href.endsWith("index.html")) {
-  localStorage.clear();
-} else {
+if (window.location.href.endsWith("thanks.html")) {
   let ratingInsertPosition = document.querySelector(".review__rating-insert-position");
   ratingInsertPosition.textContent = localStorage.getItem("rating");
+} else {
+  localStorage.clear();
 }
 
 const btnsRating = [...document.querySelectorAll(".review__btn-rating")];
@@ -47,7 +47,7 @@ btnsRating.forEach(btn => {
 });
 
 // When a submit button is clicked without giving a rating
-if (window.location.href.endsWith("index.html")) {
+if (!window.location.href.endsWith("thanks.html")) {
   const btnSubmit = document.querySelector(".review__btn-submit");
   btnSubmit.addEventListener("click", (event) => {
     // Check if the user gave rating

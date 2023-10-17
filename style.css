@@ -22,7 +22,7 @@
 
 /* General styles */
 body {
-  font-family: "Overpass";
+  font-family: "Overpass", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.57;
